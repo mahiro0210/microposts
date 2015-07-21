@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     
   def show
 #    @user = User.find(params[:id])
+    @microposts = @user.microposts
   end
   
   def new
@@ -28,7 +29,6 @@ class UsersController < ApplicationController
       flash[:info] = "User #{@user.name} Profile Edit Success!"
       redirect_to @user
     else
-      # 保存に失敗した場合は編集画面へ戻す
       render 'edit'
     end
   end

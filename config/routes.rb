@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 #  get    'edit'    => 'users#edit'
 #  patch  'users'   => 'users#update'
 
-  resources :users, only: [:show, :edit, :update]
+#  resources :users, only: [:new, :show, :edit, :update]
+  resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :microposts
 end
