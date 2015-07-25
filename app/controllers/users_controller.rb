@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 #    before_action :set_message, only: [:edit, :update, :destroy]
-  before_action :set_user, only: [:show, :edit, :update]
+#  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :followings, :followers]
     
   def show
 #    @user = User.find(params[:id])
@@ -31,6 +32,19 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def followings
+    @title = "Followings"
+    @users = @user.following_users
+    print @users
+    render 'show_follow'
+  end
+  
+  def followers
+    @title = "Followers"
+    @users = @user.followed_users
+    render 'show_follow'
   end
   
   private

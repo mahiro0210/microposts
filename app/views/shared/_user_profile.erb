@@ -1,0 +1,19 @@
+<% @user ||= current_user %>
+<ul id="user_profile">
+    <li>
+      ID: <%= @user.name %>
+    </li>
+    <li>
+      言語: <%= @user.lang %> 
+    </li>
+    <li>
+      国: <%= @user.national %> 
+    </li>
+    <li>
+      地域: <%= @user.region %> 
+    </li>
+    <li>
+      ライク: <%= @user.like %> 
+    </li>
+</ul>
+
